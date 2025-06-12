@@ -1,0 +1,455 @@
+@import "./reset.scss";
+$imgUrl: "../imgs/";
+// 宽高
+@mixin wh($width: 100%, $height: 100%) {
+  @if $width==100% {
+    width: 100%;
+  } @else {
+    width: $width + rem;
+  }
+
+  @if $height==100% {
+    height: 100%;
+  } @else {
+    height: $height + rem;
+  }
+}
+
+// 背景图
+@mixin sbg($url) {
+  background: url($imgUrl + $url) no-repeat center;
+  background-size: 100% 100%;
+}
+
+@mixin sf($size, $color: #333333, $family: 1) {
+  font-size: $size + rem;
+  color: $color;
+}
+
+// 居中
+.fc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.ai-home-page {
+  padding: 1.22rem 1.18rem 1.2rem 1.2rem;
+  .padding-content {
+    display: flex;
+    font-size: 0.32rem;
+    color: rgba(0, 0, 0, 0.9);
+    .left-consultation-part {
+      padding-right: 0.6rem;
+      border-right: 0.02rem solid #e5e5e5;
+      .consultation-part-top.select-part {
+        width: 16rem;
+        height: 0.7rem;
+        border-bottom: 0.02rem solid #e5e5e5;
+        display: flex;
+        justify-content: space-between;
+        .t-l-select {
+          display: flex;
+          gap: 0.4rem;
+          .style {
+            padding: 0.04rem 0.28rem;
+            border-radius: 0.26rem;
+            cursor: pointer;
+            max-height: 0.52rem;
+          }
+          .active {
+            border: 0.02rem solid #4f7fe5;
+            color: #4f7fe5;
+          }
+        }
+
+        .t-r-hide-btn {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          .hiden-icon {
+            @include wh(0.32, 0.28);
+            @include sbg("yincangdaima.png");
+            margin-right: 0.08rem;
+          }
+        }
+      }
+
+      .consultation-part-center {
+        @include wh(16, 9.6);
+        margin-top: 0.48rem;
+        border-radius: 0.32rem;
+        border: 0.02rem solid #e5e5e5;
+        padding: 0.32rem;
+
+        .reset {
+          display: flex;
+          justify-content: flex-end;
+          .reset-right {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            .reset-icon {
+              @include wh(0.28, 0.28);
+              @include sbg("zhongzhi.png");
+            }
+
+            .reset-word {
+              color: rgba(0, 0, 0, 0.4);
+              margin-left: 0.08rem;
+            }
+          }
+        }
+
+        .communication-wrap {
+          padding-top: 0.84rem;
+          overflow: scroll;
+          height: 8.4rem;
+          .question {
+            padding-right: 0.32rem;
+            text-align: right;
+            margin-top: 0.64rem;
+          }
+
+          .answer {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 0.9rem;
+            .answer-logo {
+              @include wh(0.64, 0.64);
+              @include sbg("logo.png");
+              min-width: 1rem;
+            }
+
+            .answer-content {
+              text-align: justify;
+              padding: 0 0.2rem 0 0.1rem;
+            }
+          }
+        }
+
+        .communication-wrap {
+          overflow: auto;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+        }
+
+        .communication-wrap::-webkit-scrollbar {
+          display: none;
+        }
+      }
+
+      .input-part {
+        margin-top: 0.2rem;
+        width: 16rem;
+        // height: 3.72rem;
+        box-shadow: 0rem 0.08rem 0.2rem 0rem rgba(65, 77, 96, 0.06);
+        border-radius: 0.32rem;
+        border: 0.02rem solid #e5e5e5;
+        padding: 0.24rem 0.32rem 0.32rem 0.32rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .upload-wrap {
+          display: flex;
+          align-items: center;
+          gap: 0.16rem;
+          .upload-img-style {
+            @include wh();
+            object-fit: contain;
+          }
+          .file-box {
+            @include wh(3.6, 1.12);
+            padding: 0.2rem 0.42rem 0.18rem 0.28rem;
+            display: flex;
+            align-items: center;
+            background: #f3f3f3;
+            border-radius: 0.16rem;
+            border: 0.02rem solid #e5e5e5;
+            position: relative;
+
+            .delete {
+              position: absolute;
+              top: -0.05rem;
+              right: -0.1rem;
+              @include wh(0.28, 0.28);
+              @include sbg("x.png");
+              cursor: pointer;
+            }
+
+            .left-type-img {
+              @include wh(0.46, 0.52);
+              margin-right: 0.12rem;
+            }
+            .exc {
+              @include sbg("exc.png");
+            }
+
+            .pdf {
+              @include sbg("pdf.png");
+            }
+
+            .right-info {
+              .name {
+                width: 2.24rem;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 0.28rem;
+              }
+
+              .size {
+                font-size: 0.24rem;
+                color: rgba(0, 0, 0, 0.4);
+              }
+            }
+          }
+          input[type="file"] {
+            opacity: 0;
+          }
+
+          .add-upload {
+            width: 1.12rem;
+            height: 1.12rem;
+            border-radius: 0.16rem;
+            border: 0.02rem solid #e5e5e5;
+            @extend .fc;
+            cursor: pointer;
+            position: relative;
+
+            .delete {
+              position: absolute;
+              top: -0.05rem;
+              right: -0.1rem;
+              @include wh(0.28, 0.28);
+              @include sbg("x.png");
+              cursor: pointer;
+            }
+
+            .img-upload {
+              width: 1.12rem;
+              height: 1.12rem;
+              position: absolute;
+              cursor: pointer;
+            }
+            .add-icon {
+              @include wh(0.34, 0.34);
+              @include sbg("add.png");
+            }
+          }
+        }
+        .upload-wrap.file {
+          margin-top: 0.2rem;
+        }
+
+        textarea {
+          all: unset;
+          white-space: pre-wrap;
+          word-break: break-word;
+        }
+
+        .input-wrap {
+          width: 100%;
+          margin-top: 0.24rem;
+          .input-style {
+            width: 100%;
+            overflow: auto;
+          }
+        }
+
+        .enter-wrap {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 0.4rem;
+          margin-top: 0.15rem;
+          .img-btn {
+            @include wh(0.48, 0.48);
+            @include sbg("tianjiatupian.png");
+            cursor: pointer;
+          }
+
+          .file-btn {
+            @include wh(0.42, 0.48);
+            @include sbg("shangchuanwenjian.png");
+            cursor: pointer;
+          }
+
+          .send-btn {
+            display: flex;
+            align-items: center;
+            width: 1.6rem;
+            height: 0.6rem;
+            background: #4f7fe5;
+            border-radius: 0.3rem;
+            cursor: pointer;
+            .send {
+              @include wh(0.45, 0.45);
+              @include sbg("fasong.png");
+              margin-left: 0.1rem;
+            }
+
+            .send-word {
+              color: #ffffff;
+              margin-left: 0.04rem;
+            }
+          }
+          .nosend {
+            background-color: #bababa;
+          }
+        }
+      }
+    }
+
+    .right-code-part {
+      margin-left: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      .select-part {
+        width: 9.2rem;
+        height: 0.7rem;
+        border-bottom: 0.02rem solid #e5e5e5;
+        display: flex;
+        justify-content: space-between;
+        .t-l-select {
+          display: flex;
+          gap: 0.4rem;
+          .style {
+            padding: 0.04rem 0.28rem;
+            border-radius: 0.26rem;
+            cursor: pointer;
+            max-height: 0.52rem;
+          }
+          .active {
+            border: 0.02rem solid #4f7fe5;
+            color: #4f7fe5;
+          }
+        }
+      }
+
+      .code-part-center {
+        flex: 1;
+        width: 9.2rem;
+        margin-top: 0.48rem;
+        border-radius: 0.32rem;
+        border: 0.02rem solid #e5e5e5;
+        padding: 0.32rem;
+        display: flex;
+        flex-direction: column;
+        .copy {
+          display: flex;
+          justify-content: flex-end;
+          .copy-right {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+          }
+          .copy-icon {
+            @include wh(0.28, 0.28);
+            @include sbg("fuzhi.png");
+          }
+
+          .copy-word {
+            color: rgba(0, 0, 0, 0.4);
+            margin-left: 0.08rem;
+          }
+        }
+
+        .code-content {
+          flex: 1;
+          padding: 0.32rem;
+          overflow: auto;
+        }
+      }
+    }
+  }
+}
+
+.dot-loading span {
+  animation: blink 1.5s infinite;
+  animation-delay: calc(var(--i) * 0.3s);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.dot-loading span:nth-child(2) {
+  --i: 1;
+}
+.dot-loading span:nth-child(3) {
+  --i: 2;
+}
+.dot-loading span:nth-child(4) {
+  --i: 3;
+}
+
+@keyframes blink {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.rotate-icon {
+  display: inline-block;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.file-box {
+  @include wh(3.6, 1.12);
+  padding: 0.2rem 0.42rem 0.18rem 0.28rem;
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border-radius: 0.16rem;
+  border: 0.02rem solid #e5e5e5;
+  position: relative;
+
+  .left-type-img {
+    @include wh(0.46, 0.52);
+    margin-right: 0.12rem;
+  }
+  .exc {
+    @include sbg("exc.png");
+  }
+
+  .pdf {
+    @include sbg("pdf.png");
+  }
+
+  .right-info {
+    .name {
+      width: 2.24rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 0.28rem;
+    }
+
+    .size {
+      font-size: 0.24rem;
+      color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

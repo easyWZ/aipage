@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI对话</title>
+    <link rel="stylesheet" href="./static/css/index.css" />
+  </head>
+  <body>
+    <div class="ai-home-page" id="ai" v-cloak>
+      <div class="padding-content">
+        <section class="left-consultation-part">
+          <div class="consultation-part-top select-part">
+            <div class="t-l-select">
+              <div
+                class="style"
+                :class="{ active: styleSelect == 1 }"
+                @click="changeStyleSelect(1)"
+              >
+                DeepSeek
+              </div>
+              <div
+                class="style"
+                :class="{ active: styleSelect == 2 }"
+                @click="changeStyleSelect(2)"
+              >
+                Hunyuan
+              </div>
+            </div>
+            <div class="t-r-hide-btn">
+              <i class="hiden-icon"></i>
+              <span class="hide-word">隐藏代码</span>
+            </div>
+          </div>
+          <div class="consultation-part-center">
+            <div class="reset" @click="changeReset">
+              <div class="reset-right">
+                <i class="reset-icon" :class="{ 'rotate-icon': isReset }"></i>
+                <div class="reset-word">重置对话</div>
+              </div>
+            </div>
+            <div class="communication-wrap" ref="communicationWrap">
+              <section
+                class="communication-box"
+                v-for="(item,itId) in content"
+                :key="itId"
+              >
+                <div class="question" v-html="item.question"></div>
+                <div class="answer">
+                  <i class="answer-logo"></i>
+                  <div class="answer-content" v-html="item.answer"></div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="input-part">
+            <!-- img -->
+            <div class="upload-wrap img" v-show="uploadImgs.length > 0">
+              <section
+                class="add-upload"
+                v-for="(imgItem,imgIndex) in uploadImgs"
+                :key="imgIndex"
+              >
+                <i class="delete" @click="deleteImg(imgIndex)"></i>
+                <img class="upload-img-style" :src="imgItem.url" alt="" />
+              </section>
+              <div class="add-upload">
+                <input
+                  ref="imgUpload"
+                  type="file"
+                  accept="image/*"
+                  class="img-upload"
+                  @change="uploadImg"
+                />
+                <i class="add-icon"></i>
+              </div>
+            </div>
+            <!-- file -->
+            <div class="upload-wrap file" v-show="uploadFiles.length > 0">
+              <section
+                class="file-box"
+                v-for="(fileItem,fileIndex) in uploadFiles"
+                :key="fileIndex"
+              >
+                <i class="delete" @click="deleteFile(fileIndex)"></i>
+                <div
+                  class="left-type-img"
+                  :class="fileItem.typeName== 'pdf' ? 'pdf' : 'exc' "
+                ></div>
+                <div class="right-info">
+                  <div class="name">{{fileItem.name}}</div>
+                  <div class="size">
+                    {{ fileItem.typeName }} | {{ fileItem.size }}
+                  </div>
+                </div>
+              </section>
+              <div class="add-upload">
+                <input
+                  ref="fileUpload"
+                  type="file"
+                  accept=".xls,.xlsx,application/pdf,.doc,.docx"
+                  class="img-upload"
+                  @change="uploadFile"
+                />
+                <i class="add-icon"></i>
+              </div>
+            </div>
+            <div class="input-wrap">
+              <textarea
+                class="input-style"
+                v-model="inputWord"
+                placeholder="有问题，尽管问，shift+enter换行"
+              ></textarea>
+            </div>
+            <div class="enter-wrap">
+              <div class="img-btn" @click="triggerImgUploadBtn"></div>
+              <div class="file-btn" @click="triggerFileUploadBtn"></div>
+              <div
+                class="send-btn"
+                @click="send"
+                :class="{ nosend: !canSend || (inputWord== '' && uploadFiles.length == 0 && uploadImgs.length == 0)  }"
+              >
+                <i class="send"></i>
+                <div class="send-word">发送</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="right-code-part">
+          <div class="select-part">
+            <div class="t-l-select">
+              <div
+                class="style"
+                :class="{ active: codeSelect == 1 }"
+                @click="changeCodeSelect(1)"
+              >
+                Python
+              </div>
+              <div
+                class="style"
+                :class="{ active: codeSelect == 2 }"
+                @click="changeCodeSelect(2)"
+              >
+                Shell
+              </div>
+            </div>
+          </div>
+          <div class="code-part-center">
+            <div class="copy">
+              <div class="copy-right" @click="copy">
+                <i class="copy-icon"></i>
+                <div class="copy-word">复制</div>
+              </div>
+            </div>
+            <div class="code-content">
+              <pre><code>{{ code }}</code></pre>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script src="./static/js/vue.global.prod.js"></script>
+    <script src="./static/js/index.js"></script>
+  </body>
+</html>

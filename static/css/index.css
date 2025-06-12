@@ -1,0 +1,573 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+pre,
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+section,
+th,
+td {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: couriernew, courier, monospace;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+sup {
+  vertical-align: text-top;
+}
+
+sub {
+  vertical-align: text-bottom;
+}
+
+legend {
+  color: #000;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+/* button, input, select, textarea { font-size:100%; }  */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.fc, .ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .add-upload {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.ai-home-page {
+  padding: 1.22rem 1.18rem 1.2rem 1.2rem;
+}
+
+.ai-home-page .padding-content {
+  display: flex;
+  font-size: 0.32rem;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.ai-home-page .padding-content .left-consultation-part {
+  padding-right: 0.6rem;
+  border-right: 0.02rem solid #e5e5e5;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-top.select-part {
+  width: 16rem;
+  height: 0.7rem;
+  border-bottom: 0.02rem solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-top.select-part .t-l-select {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-top.select-part .t-l-select .style {
+  padding: 0.04rem 0.28rem;
+  border-radius: 0.26rem;
+  cursor: pointer;
+  max-height: 0.52rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-top.select-part .t-l-select .active {
+  border: 0.02rem solid #4f7fe5;
+  color: #4f7fe5;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-top.select-part .t-r-hide-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-top.select-part .t-r-hide-btn .hiden-icon {
+  width: 0.32rem;
+  height: 0.28rem;
+  background: url("../imgs/yincangdaima.png") no-repeat center;
+  background-size: 100% 100%;
+  margin-right: 0.08rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center {
+  width: 16rem;
+  height: 9.6rem;
+  margin-top: 0.48rem;
+  border-radius: 0.32rem;
+  border: 0.02rem solid #e5e5e5;
+  padding: 0.32rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .reset {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .reset .reset-right {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .reset .reset-right .reset-icon {
+  width: 0.28rem;
+  height: 0.28rem;
+  background: url("../imgs/zhongzhi.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .reset .reset-right .reset-word {
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 0.08rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .communication-wrap {
+  padding-top: 0.84rem;
+  overflow: scroll;
+  height: 8.4rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .communication-wrap .question {
+  padding-right: 0.32rem;
+  text-align: right;
+  margin-top: 0.64rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .communication-wrap .answer {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 0.9rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .communication-wrap .answer .answer-logo {
+  width: 0.64rem;
+  height: 0.64rem;
+  background: url("../imgs/logo.png") no-repeat center;
+  background-size: 100% 100%;
+  min-width: 1rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .communication-wrap .answer .answer-content {
+  text-align: justify;
+  padding: 0 0.2rem 0 0.1rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .communication-wrap {
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ai-home-page .padding-content .left-consultation-part .consultation-part-center .communication-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part {
+  margin-top: 0.2rem;
+  width: 16rem;
+  box-shadow: 0rem 0.08rem 0.2rem 0rem rgba(65, 77, 96, 0.06);
+  border-radius: 0.32rem;
+  border: 0.02rem solid #e5e5e5;
+  padding: 0.24rem 0.32rem 0.32rem 0.32rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.16rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .upload-img-style {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .file-box {
+  width: 3.6rem;
+  height: 1.12rem;
+  padding: 0.2rem 0.42rem 0.18rem 0.28rem;
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border-radius: 0.16rem;
+  border: 0.02rem solid #e5e5e5;
+  position: relative;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .file-box .delete {
+  position: absolute;
+  top: -0.05rem;
+  right: -0.1rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  background: url("../imgs/x.png") no-repeat center;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .file-box .left-type-img {
+  width: 0.46rem;
+  height: 0.52rem;
+  margin-right: 0.12rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .file-box .exc {
+  background: url("../imgs/exc.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .file-box .pdf {
+  background: url("../imgs/pdf.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .file-box .right-info .name {
+  width: 2.24rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.28rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .file-box .right-info .size {
+  font-size: 0.24rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap input[type="file"] {
+  opacity: 0;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .add-upload {
+  width: 1.12rem;
+  height: 1.12rem;
+  border-radius: 0.16rem;
+  border: 0.02rem solid #e5e5e5;
+  cursor: pointer;
+  position: relative;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .add-upload .delete {
+  position: absolute;
+  top: -0.05rem;
+  right: -0.1rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  background: url("../imgs/x.png") no-repeat center;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .add-upload .img-upload {
+  width: 1.12rem;
+  height: 1.12rem;
+  position: absolute;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap .add-upload .add-icon {
+  width: 0.34rem;
+  height: 0.34rem;
+  background: url("../imgs/add.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .upload-wrap.file {
+  margin-top: 0.2rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part textarea {
+  all: unset;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .input-wrap {
+  width: 100%;
+  margin-top: 0.24rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .input-wrap .input-style {
+  width: 100%;
+  overflow: auto;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .enter-wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.15rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .enter-wrap .img-btn {
+  width: 0.48rem;
+  height: 0.48rem;
+  background: url("../imgs/tianjiatupian.png") no-repeat center;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .enter-wrap .file-btn {
+  width: 0.42rem;
+  height: 0.48rem;
+  background: url("../imgs/shangchuanwenjian.png") no-repeat center;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .enter-wrap .send-btn {
+  display: flex;
+  align-items: center;
+  width: 1.6rem;
+  height: 0.6rem;
+  background: #4f7fe5;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .enter-wrap .send-btn .send {
+  width: 0.45rem;
+  height: 0.45rem;
+  background: url("../imgs/fasong.png") no-repeat center;
+  background-size: 100% 100%;
+  margin-left: 0.1rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .enter-wrap .send-btn .send-word {
+  color: #ffffff;
+  margin-left: 0.04rem;
+}
+
+.ai-home-page .padding-content .left-consultation-part .input-part .enter-wrap .nosend {
+  background-color: #bababa;
+}
+
+.ai-home-page .padding-content .right-code-part {
+  margin-left: 0.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-home-page .padding-content .right-code-part .select-part {
+  width: 9.2rem;
+  height: 0.7rem;
+  border-bottom: 0.02rem solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ai-home-page .padding-content .right-code-part .select-part .t-l-select {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.ai-home-page .padding-content .right-code-part .select-part .t-l-select .style {
+  padding: 0.04rem 0.28rem;
+  border-radius: 0.26rem;
+  cursor: pointer;
+  max-height: 0.52rem;
+}
+
+.ai-home-page .padding-content .right-code-part .select-part .t-l-select .active {
+  border: 0.02rem solid #4f7fe5;
+  color: #4f7fe5;
+}
+
+.ai-home-page .padding-content .right-code-part .code-part-center {
+  flex: 1;
+  width: 9.2rem;
+  margin-top: 0.48rem;
+  border-radius: 0.32rem;
+  border: 0.02rem solid #e5e5e5;
+  padding: 0.32rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-home-page .padding-content .right-code-part .code-part-center .copy {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ai-home-page .padding-content .right-code-part .code-part-center .copy .copy-right {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ai-home-page .padding-content .right-code-part .code-part-center .copy .copy-icon {
+  width: 0.28rem;
+  height: 0.28rem;
+  background: url("../imgs/fuzhi.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.ai-home-page .padding-content .right-code-part .code-part-center .copy .copy-word {
+  color: rgba(0, 0, 0, 0.4);
+  margin-left: 0.08rem;
+}
+
+.ai-home-page .padding-content .right-code-part .code-part-center .code-content {
+  flex: 1;
+  padding: 0.32rem;
+  overflow: auto;
+}
+
+.dot-loading span {
+  animation: blink 1.5s infinite;
+  animation-delay: calc(var(--i) * 0.3s);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.dot-loading span:nth-child(2) {
+  --i: 1;
+}
+
+.dot-loading span:nth-child(3) {
+  --i: 2;
+}
+
+.dot-loading span:nth-child(4) {
+  --i: 3;
+}
+
+@keyframes blink {
+  0%,
+  20% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
+.rotate-icon {
+  display: inline-block;
+  animation: spin 0.5s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(180deg);
+  }
+}
+
+.file-box {
+  width: 3.6rem;
+  height: 1.12rem;
+  padding: 0.2rem 0.42rem 0.18rem 0.28rem;
+  display: flex;
+  align-items: center;
+  background: #f3f3f3;
+  border-radius: 0.16rem;
+  border: 0.02rem solid #e5e5e5;
+  position: relative;
+}
+
+.file-box .left-type-img {
+  width: 0.46rem;
+  height: 0.52rem;
+  margin-right: 0.12rem;
+}
+
+.file-box .exc {
+  background: url("../imgs/exc.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.file-box .pdf {
+  background: url("../imgs/pdf.png") no-repeat center;
+  background-size: 100% 100%;
+}
+
+.file-box .right-info .name {
+  width: 2.24rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 0.28rem;
+}
+
+.file-box .right-info .size {
+  font-size: 0.24rem;
+  color: rgba(0, 0, 0, 0.4);
+}
