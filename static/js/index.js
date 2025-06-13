@@ -20,6 +20,7 @@ const ai = {
       fileType: 1, // 1-图片 2-文件
       uploadFiles: [],
       uploadImgs: [],
+      codeShowStatus: 0, // 0-显示无动画 文字为隐藏 1-隐藏动画 文字为显示 2- 显示动画 文字为隐藏
     };
   },
   methods: {
@@ -64,6 +65,12 @@ const ai = {
     },
     reset() {
       this.content = [];
+    },
+    handleKey(e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        this.send();
+      }
     },
     send() {
       if (
@@ -218,6 +225,10 @@ const ai = {
     },
     triggerFileUploadBtn() {
       this.$refs.fileUpload.click();
+    },
+    changeCodeShowStatus() {
+      let statusAry = [1, 2, 1];
+      this.codeShowStatus = statusAry[this.codeShowStatus];
     },
   },
   mounted() {

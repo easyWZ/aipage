@@ -110,12 +110,12 @@ table {
 }
 
 .ai-home-page .padding-content .left-consultation-part {
+  width: 16.6rem;
   padding-right: 0.6rem;
   border-right: 0.02rem solid #e5e5e5;
 }
 
 .ai-home-page .padding-content .left-consultation-part .consultation-part-top.select-part {
-  width: 16rem;
   height: 0.7rem;
   border-bottom: 0.02rem solid #e5e5e5;
   display: flex;
@@ -154,7 +154,6 @@ table {
 }
 
 .ai-home-page .padding-content .left-consultation-part .consultation-part-center {
-  width: 16rem;
   height: 9.6rem;
   margin-top: 0.48rem;
   border-radius: 0.32rem;
@@ -228,7 +227,6 @@ table {
 
 .ai-home-page .padding-content .left-consultation-part .input-part {
   margin-top: 0.2rem;
-  width: 16rem;
   box-shadow: 0rem 0.08rem 0.2rem 0rem rgba(65, 77, 96, 0.06);
   border-radius: 0.32rem;
   border: 0.02rem solid #e5e5e5;
@@ -411,8 +409,39 @@ table {
   background-color: #bababa;
 }
 
+.ai-home-page .padding-content .fullWidth {
+  animation: expandToFullWidth 1s forwards ease;
+}
+
+@keyframes expandToFullWidth {
+  0% {
+    width: 16.6rem;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.ai-home-page .padding-content .backOriginWidth {
+  transform-origin: right;
+  transform: scaleX(1);
+  animation: shrinkRightToLeft 1s forwards ease;
+}
+
+@keyframes shrinkRightToLeft {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 16.6rem;
+  }
+}
+
 .ai-home-page .padding-content .right-code-part {
-  margin-left: 0.6rem;
+  position: absolute;
+  top: 1.22rem;
+  right: 1.18rem;
+  padding-left: 0.6rem;
   display: flex;
   flex-direction: column;
 }
@@ -443,7 +472,7 @@ table {
 }
 
 .ai-home-page .padding-content .right-code-part .code-part-center {
-  flex: 1;
+  height: 12.4rem;
   width: 9.2rem;
   margin-top: 0.48rem;
   border-radius: 0.32rem;
@@ -480,6 +509,42 @@ table {
   flex: 1;
   padding: 0.32rem;
   overflow: auto;
+}
+
+.ai-home-page .padding-content .right-code-part .sc {
+  height: 13.52rem;
+}
+
+.ai-home-page .padding-content .shrink-hiden {
+  transform-origin: right;
+  transform: scaleX(1);
+  animation: shrinkToLeft 1s forwards;
+}
+
+.ai-home-page .padding-content .shrink-show {
+  transform-origin: right;
+  transform: scaleX(0);
+  animation: growRightToLeft 1s forwards;
+}
+
+@keyframes growRightToLeft {
+  0% {
+    transform: scaleX(0);
+    display: none;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes shrinkToLeft {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+    display: none;
+  }
 }
 
 .dot-loading span {
